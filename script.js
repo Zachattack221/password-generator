@@ -21,7 +21,7 @@ function generatePassword() {
 
   // attempts at making confirm prompts to define the possible characters to be used in password generation
   // connecting if statements tied to the confirm value of each prompt, if true section runs, if false next section will attempt
-  
+
   var containsUpper = confirm("Do you want your password to include Uppercase letters?");
   if (containsUpper === true) {
     for (var i = 0, i < passwordCharCount; i++) {
@@ -51,10 +51,14 @@ function generatePassword() {
       }
 
     }
-
-    debugger;
-    return '';
+// else statement added to account for user not selecting at least one character type for password
+ else {
+      alert('You must select at least one character type for your password: Uppercase numbers, Lowercase numbers, Numbers, and/or special characters');
+    }
   }
+  return ''
+}
+
 
 // // Write password to the #password input
 // function writePassword() {
