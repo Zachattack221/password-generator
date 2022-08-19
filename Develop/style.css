@@ -118,7 +118,14 @@ button[disabled] {
   overflow: hidden;
 }
 
+/* added extra parameters to media query to adjust for multiple-screen sizes */
 @media (max-width: 690px) {
+  body {
+    display:flex;
+    flex-direction: column;
+    min-width: 390px;
+  }
+  
   .btn {
     font-size: 1rem;
     margin: 16px 0px 0px 0px;
