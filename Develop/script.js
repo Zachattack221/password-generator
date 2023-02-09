@@ -1,27 +1,25 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Setting variables that correspond to the possible inputs for each character type: uppercase, lowercase, bumeric, or special
+// Setting variables that correspond to the possible inputs for each character type: uppercase, lowercase, numeric, or special
 function generatePassword() {
   var upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var lowerLetters = "abcdefghijklmnopqrstuvwxy";
   var numOptions = "0123456789";
+
   // Added in escape key for characters that cause errors in string display, removed ! and single space from special character options to minimize errors
   var specialChar = "\"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~";
   var possibleCharacters = "";
   var finalPassword = [];
 
-  // trying to add a feature that converts the string response of a prompt into an actual number between specified range
-
+  // Feature that converts the string response of a prompt into an actual number between specified range
   var passwordCharCount = Number(prompt("How many characters would you like your password to be?"));
   if (passwordCharCount < 8 || passwordCharCount > 128 || passwordCharCount === NaN) {
     alert('Password must have at least 8 characters, and no more than 128');
     return '';
   }
 
-  // attempts at making confirm prompts to define the possible characters to be used in password generation
-  // connecting if statements tied to the confirm value of each prompt, if true section runs, if false next section will attempt
-
+  // Confirm prompts to define the possible characters to be used in password generation
+  // Connecting if statements tied to the confirm value of each prompt, if true section runs, if false next section will attempt
   var containsUpper = confirm("Do you want your password to include Uppercase letters?");
   if (containsUpper === true) {
     possibleCharacters = upperLetters;
